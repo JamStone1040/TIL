@@ -43,3 +43,45 @@ git log
 
     만약에 맥에서 다음과 같은 문제가 발생 했다면?
     : mac도 동일하나 바탕화면에서 cmd + shift + .로 숨김파일들이 드러나게 하면 됨
+
+### Remote Repoitory
+원격 저장소로써 협업하고 코드를 공유할 수 있는 저장 공간임
+
+- 로컬 저장소에 원격 저장소 추가
+    ```git
+    git remote add origin remote_repo_url
+    ```
+    orgin은 별칭으로써 첫 별칭은 orgin을 사용하는 것이 관행
+
+    remote가 잘 되었는지는 다음과 같이 확인
+    ```git
+    git remote -v
+    ```
+
+- 원격 저장소에 commit 목록 업로드
+```git
+git push origin master
+```
+
+- 원격 저장소에 commit 목록 다운로드
+
+    왜 push와 clone 두 가지인가?
+
+    clone(복제 : 깃헙에 있던 커밋 전체를 다운 받음), pull(변경사항 만큼만 받는다)
+
+- 만약 원격 저장소를 잘 못 등록했다면?
+    ```git
+    git remote rm <remote_name>
+
+- gitignore
+  
+    git에서 특정 파일이나 디렉토리를 추적하지 않도록 설정
+
+    데이터베이스 같은 경우 개인정보 등 민감한 정보가 있어서 git이 무시하도록 해야하는데 그것이 gitignore임
+
+    한번이라도 버전관리(커밋) 받았다면 gitignore가 먹히지 않음. 따라서 gitignore는 가장 처음에 하는 것이 가장 좋음. 
+
+    .gitignore 파일 생성하면 되고, 확장자는 없음
+
+    - 자동으로 ignore 해주는 사이트[https://www.toptal.com/developers/gitignore/]
+
